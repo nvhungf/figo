@@ -1,6 +1,9 @@
 package main
 
-import "github.com/gofiber/fiber/v2"
+import (
+	"github.com/gofiber/fiber/v2"
+	"github.com/nvhungf/figo/pkg/route"
+)
 
 func main() {
 	app := fiber.New()
@@ -9,5 +12,6 @@ func main() {
 			"message": "Figo API",
 		})
 	})
+	route.Expenses(app)
 	app.Listen(":3000")
 }
